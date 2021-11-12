@@ -4,12 +4,20 @@ values = [
     161, 152, 76, 9
 ]
 
+result = [0, ] * len(values) 
 
-result = ''
+r_result = ''
 
-for i in range(0, len(values)):
-    for j in range(33, 122):
-        for a in range(33, 122):
-             
+values.reverse() 
 
-print(result)
+for i in range(1, len(values)): 
+    result[i] = values[i] - result[i-1] 
+    
+result.reverse() 
+
+for i in range(len(result)): 
+    r_result += chr(result[i])
+
+
+
+print(r_result)

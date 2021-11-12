@@ -33,6 +33,11 @@ for (let index = 0; index < b.length; index++) {
         }
     }
 }
+console.log(result.split("×")[0])
 
-
-console.log(result)
+```
+mov rcx,qword ptr ss:[rsp+20]           | rcx = 입력받은 값 
+movzx eax,byte ptr ds:[rcx+rax]         | eax = 입력받은 값[i]
+lea rcx,qword ptr ds:[7FF7E1923020]     | rcx = 7FF7E1923020
+movzx eax,byte ptr ds:[rcx+rax]         | eax = 7FF7E1923020[i]
+```
