@@ -11,5 +11,3 @@ for i in range(len(values) - 1):
             result += chr(j)
 
 print(result)
-
-
