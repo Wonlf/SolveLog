@@ -24,7 +24,18 @@ values = [99, 124, 119, 123, 242, 107, 111, 197, 48, 1, 103, 43,
 v5 = [74, 95, 97, 109, 95, 75, 69, 89]
 
 
-a1 = [0, ] * len(values) 
+# a1 = [0, ] * len(values) 
+
+
+
+
+main = [
+    0x7E, 0x7D, 0x9A, 0x8B, 0x25, 0x2D, 0x0D5, 0x3D, 3, 0x2B,
+    0x38, 0x98, 0x27, 0x9F, 0x4F, 0x0BC, 0x2A, 0x79, 0,
+    0x7D, 0x0C4, 0x2A, 0x4F, 0x58, 0, 0, 0, 0, 0, 0, 0, 0
+]
+
+# print(len(val))
 
 def ror(x, n):
     shiftBit = x >> n
@@ -33,12 +44,95 @@ def ror(x, n):
     return shiftBit | carryBit
 
 
+def rol(x, n):
+    shiftBit = x << n
+    shiftBit &= 255
+    carryBit = x >> 8 - n
+    return shiftBit | carryBit
 
 
-for i in range(0, 16):
-    for j in range(0,8):
-        for index in range(33, 125):
-            index = ror(a1[(j + 1) & 7] + values[v5[j] ^ index], 5)
-            a1[(j + 1) & 7] = index
+#for i in range(0, 25):
+    
+    
+# for index in range(33, 125):
+#     if(val[0] == ror(index + values[v5[7] ^ index], 5)):
+#         print(index)
 
-print(a1)
+result = [151, 64, 98, 22, 53, 135, 71, 140]
+
+#main[1] = ror(a[1] + values[v5[0] ^ a[0]], 5) 
+# for index in range(33, 122):
+#     if(main[2] == rol(index + values[v5[1] ^ main[1]], 5)):
+#         print(index)
+
+# a = 5
+
+# print(a)
+
+# a = ror(a, 5)
+
+# print(a)
+
+# a = rol(a, 5)
+
+# print(a)s
+
+#print(values[v5[7] ^ main[7]]) 67
+
+
+#0x7E = ror(n + 67, 5)
+
+#print(rol(0x7E, 5) - values[v5[7] ^ main[7]])
+
+# print(ror(140 + 67, 5))
+
+#0x7E = ror((65 + n) , 5)
+
+print(rol(main[1], 5) - values[v5[0] ^ main[0]])
+print(rol(main[2], 5) - values[v5[1] ^ main[1]])
+print(rol(main[3], 5) - values[v5[2] ^ main[2]])
+print(rol(main[4], 5) - values[v5[3] ^ main[3]])
+print(rol(main[5], 5) - values[v5[4] ^ main[4]])
+print(rol(main[6], 5) - values[v5[5] ^ main[5]])
+print(rol(main[7], 5) - values[v5[6] ^ main[6]])
+print(rol(main[0], 5) - values[v5[7] ^ main[7]])
+
+
+# for i in range(0, 8):
+#     print(rol(main[i], 5) - values[v5[i] ^ main[i]])
+   
+#print(rol(main[0], 5) - values[v5[7] ^ main[7]])
+
+
+# for j in range(0, 8):
+#     main[0] = ror(a[0] + values[v5[7] ^ main[7]], 5)
+
+#     main[1] = ror(a[1] + values[v5[0] ^ main[0]], 5)
+#     main[2] = ror(a[2] + values[v5[1] ^ main[1]], 5)
+#     main[3] = ror(a[3] + values[v5[2] ^ main[2]], 5)
+#     main[4] = ror(a[4] + values[v5[3] ^ main[3]], 5)
+#     main[5] = ror(a[5] + values[v5[4] ^ main[4]], 5)
+#     main[6] = ror(a[6] + values[v5[5] ^ main[5]], 5)
+#     main[7] = ror(a[7] + values[v5[6] ^ main[6]], 5)
+
+#    
+
+
+
+
+
+# for i in range(0, 16):
+#     for j in range(0,8):
+#         for index in range(33, 125):
+#             for asd in range(0, len(val)):
+#                 if(ror(a1[(j + 1) & 7] + values[v5[j] ^ index], 5) == val[asd]):
+
+#             # index = ror(a1[(j + 1) & 7] + values[v5[j] ^ index], 5)
+#             # a1[(j + 1) & 7] = index
+# print(a1)
+# for j in range(0, 8):
+#     for asd in range(0, len(val)):
+#         for index in range(33, 125):
+#             for index2 in range(33, 125):
+#                 if(ror(index2 + values[v5[j] ^ index2], 5) == val[asd]):
+#                     print(index2, index)

@@ -30,3 +30,8 @@
 //     }
 //     result = (unsigned int)(i + 1);
 //   }
+
+for (let index = 0; index < 8; index += 8) {
+    console.log(index)
+    
+}
