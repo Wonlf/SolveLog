@@ -35,6 +35,7 @@ main = [
     0x7D, 0x0C4, 0x2A, 0x4F, 0x58, 0, 0, 0, 0, 0, 0, 0, 0
 ]
 
+
 # print(len(val))
 
 def ror(x, n):
@@ -50,7 +51,6 @@ def rol(x, n):
     carryBit = x >> 8 - n
     return shiftBit | carryBit
 
-
 #for i in range(0, 25):
     
     
@@ -58,7 +58,7 @@ def rol(x, n):
 #     if(val[0] == ror(index + values[v5[7] ^ index], 5)):
 #         print(index)
 
-result = [151, 64, 98, 22, 53, 135, 71, 140]
+result = ''
 
 #main[1] = ror(a[1] + values[v5[0] ^ a[0]], 5) 
 # for index in range(33, 122):
@@ -84,23 +84,28 @@ result = [151, 64, 98, 22, 53, 135, 71, 140]
 
 #print(rol(0x7E, 5) - values[v5[7] ^ main[7]])
 
-# print(ror(140 + 67, 5))
-
-#0x7E = ror((65 + n) , 5)
-
-print(rol(main[1], 5) - values[v5[0] ^ main[0]])
-print(rol(main[2], 5) - values[v5[1] ^ main[1]])
-print(rol(main[3], 5) - values[v5[2] ^ main[2]])
-print(rol(main[4], 5) - values[v5[3] ^ main[3]])
-print(rol(main[5], 5) - values[v5[4] ^ main[4]])
-print(rol(main[6], 5) - values[v5[5] ^ main[5]])
-print(rol(main[7], 5) - values[v5[6] ^ main[6]])
-print(rol(main[0], 5) - values[v5[7] ^ main[7]])
+#print(ror(140 + 67, 5))
 
 
-# for i in range(0, 8):
-#     print(rol(main[i], 5) - values[v5[i] ^ main[i]])
-   
+
+# print(rol(main[2], 5) - values[v5[1] ^ main[1]])
+# print(rol(main[3], 5) - values[v5[2] ^ main[2]])
+# print(rol(main[4], 5) - values[v5[3] ^ main[3]])
+# print(rol(main[5], 5) - values[v5[4] ^ main[4]])
+# print(rol(main[6], 5) - values[v5[5] ^ main[5]])
+# print(rol(main[7], 5) - values[v5[6] ^ main[6]])
+# print(rol(main[0], 5) - values[v5[7] ^ main[7]])
+
+
+# rol(0x7E, 5) == a[0] + values[v5[7] ^ 0]
+# 207 ==  a[0] + values[v5[7] ^ 0]
+
+#print(207 - values[v5[7] ^ 0])
+
+#for i in range(7, 0,  -1):
+    #print(i)
+    #print(rol(main[i + 1], 5) - values[v5[i] ^ main[i]])
+
 #print(rol(main[0], 5) - values[v5[7] ^ main[7]])
 
 
@@ -116,8 +121,6 @@ print(rol(main[0], 5) - values[v5[7] ^ main[7]])
 #     main[7] = ror(a[7] + values[v5[6] ^ main[6]], 5)
 
 #    
-
-
 
 
 
