@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 unsigned int first(int val[]){
     int esi, edx = 0;
@@ -36,7 +36,7 @@ unsigned int second(int val[]){
     return (ebp & 0xfffff000) >> 12;
 }
 
-int main(void) {
+int main() {
 
     for (int i = 33; i < 134; ++i) {
         for (int j = 33; j < 134; ++j) {
@@ -45,7 +45,7 @@ int main(void) {
             unsigned int b = second(value);
 
             if(a == 0x5D88 && b == 0x53B4){
-                printf("%c%c", i, j);
+                std::cout <<  char(i) << char(j) << std::endl;
             }
         }
     }
